@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Posts{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ title }}</h1>
+    <br>
+    {% if post_list %}
+    <div class="payload">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Post Title</th>
+                <th scope="col">Post Description</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for post in post_list %}
+                <tr>
+                    <th scope="row"><a href="{% url 'post_show' post_id=post.id %}">{{ post.title }}</a></th>
+                    <td>{{ post.description }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <h4> Nothing to display </h4>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Create Post{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ title }}</h1>
+    <br>
+    <div class="error">
+        {{ form.errors }}
+    </div>
+    <div class="payload">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.title }}
+            {{ form.description }}
+            {{ form.content }}
+            <button class="btn btn-outline-warning">Create Post</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

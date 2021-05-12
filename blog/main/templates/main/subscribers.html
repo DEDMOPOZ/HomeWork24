@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Subscribers{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ title }}</h1>
+    <br>
+    <div class="payload">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Subscriber ID</th>
+                <th scope="col">Subscriber's Email</th>
+                <th scope="col">Author</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for subscriber in subscribers %}
+            <tr>
+                <th scope="row">{{ subscriber.id }}</th>
+                <td>{{ subscriber.email_to }}</td>
+                <td>{{ subscriber.author_id }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

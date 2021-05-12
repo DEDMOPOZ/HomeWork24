@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Post{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ title }}</h1>
+    <br>
+    <div class="error">
+        {{ form.errors }}
+    </div>
+    <div class="card border-dark mb-3">
+    <div class="card-header">{{ post.title }}</div>
+    <div class="card-body">
+        <h5 class="card-title">{{ post.description }}</h5>
+        <p class="card-text">{{ post.content }}</p>
+    <button class="btn btn-outline-warning">
+            <a href="{% url 'post_update' post_id=post.id %}"> Edit Post</a>
+    </button>
+    </div>
+    <div class="card-footer">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.comment }}
+            <button class="btn btn-outline-warning">
+                <a>Comment</a>
+            </button>
+        </form>
+    </div>
+    <div class="card-footer">
+        {% for comment in comments %}
+            <div class="comment">
+                {{ comment.comment }}
+            </div>
+        {% empty %}
+            <p>There are no comments yet.</p>
+        {% endfor %}
+    </div>
+    </div>
+</div>
+{% endblock %}

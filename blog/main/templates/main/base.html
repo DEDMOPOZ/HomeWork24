@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}Blog{% endblock %}</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'assets/images/favicon' %}/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'assets/images/favicon' %}/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'assets/images/favicon' %}/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'assets/images/favicon' %}/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'assets/images/favicon' %}/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'assets/images/favicon' %}/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'assets/images/favicon' %}/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'assets/images/favicon' %}/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicon' %}/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static 'assets/images/favicon' %}/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicon' %}/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'assets/images/favicon' %}/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicon' %}/favicon-16x16.png">
+    <link rel="manifest" href="{% static 'assets/images/favicon' %}/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'assets/images/favicon' %}/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'home_page' %}">Home page</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="{% url 'post_create' %}"> Create Post </a>
+            <a class="nav-item nav-link" href="{% url 'posts' %}"> Posts </a>
+            <a class="nav-item nav-link" href="{% url 'posts_list_xlsx' %}"> Download Posts </a>
+            <a class="nav-item nav-link" href="{% url 'authors_new' %}"> Create New Author </a>
+            <a class="nav-item nav-link" href="{% url 'authors_all' %}"> Authors </a>
+            <a class="nav-item nav-link" href="{% url 'books_all' %}"> Books </a>
+            <a class="nav-item nav-link" href="{% url 'categories_all' %}"> Categories </a>
+            <a class="nav-item nav-link" href="{% url 'authors_sub' %}"> Subscribe to Author </a>
+            <a class="nav-item nav-link" href="{% url 'subscribers_all' %}"> All Subscribers </a>
+            <a class="nav-item nav-link" href="{% url 'contact_us_create' %}"> Contact Us </a>
+            <a class="nav-item nav-link" href="{% url 'contact_us_all' %}"> Contact Us Messages </a>
+            <a class="nav-item nav-link" href="{% url 'about' %}"> About </a>
+        </div>
+    </div>
+</nav>
+
+{% block content %}{% endblock %}
+<br>
+<footer class="bg-light text-center text-lg-start">
+    <div class="text-center p-3">
+        <span class="text-muted"> © 2021 Copyright: DEDMOPOZ </span>
+    </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>
+

@@ -14,15 +14,20 @@
     <div class="card-body">
         <h5 class="card-title">{{ post.description }}</h5>
         <p class="card-text">{{ post.content }}</p>
-    <button class="btn btn-outline-warning">
+    <button type="button" class="btn btn-outline-warning">
             <a href="{% url 'post_update' post_id=post.id %}"> Edit Post</a>
     </button>
+    {% if request.user.is_authenticated %}
+        <button type="button" class="btn btn-outline-danger">
+            <a href="{% url 'post_delete' post_id=post.id %}"> Delete </a>
+        </button>
+    {% endif %}
     </div>
     <div class="card-footer">
         <form method="POST">
             {% csrf_token %}
             {{ form.comment }}
-            <button class="btn btn-outline-warning">
+            <button type="button" class="btn btn-outline-warning">
                 <a>Comment</a>
             </button>
         </form>

@@ -17,6 +17,7 @@ flake8-docstrings==1.6.0
 flake8-import-order==0.18.1
 flake8-quotes==3.2.0
 flower==0.9.7
+gunicorn==20.1.0
 humanize==3.4.1
 idna==2.10
 kombu==4.6.11

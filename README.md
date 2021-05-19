@@ -2,7 +2,7 @@
 gunicorn -w 4 -b unix:/tmp/gunicorn.sock --chdir src core.wsgi --timeout 60 --log-level debug --max-requests 10000
 
 # NGinx Config
-worker_processes  1;  ## Default: 1
+worker_processes  1;
 error_log  /var/log/nginx/error.log;
 worker_rlimit_nofile 8192;
 
@@ -35,7 +35,7 @@ http {
     location = /favicon.icon { access_log off; log_not_found off; }
     
     location /static/ {
-    	root /home/dedmopoz/python/HomeWork18/static_content/;
+    	root /home/dedmopoz/python/HomeWork18/static_content;
     }
     
     location / {

@@ -1,3 +1,8 @@
+# Run Project using Docker
+docker-compose build
+docker-compose run backend python src/manage.py migrate
+docker-compose up
+
 # Run Gunicorn
 gunicorn -w 4 -b unix:/tmp/gunicorn.sock --chdir src core.wsgi --timeout 60 --log-level debug --max-requests 10000
 

@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+  <h1 class="text-center">{{ title }}</h1>
+    <div class="row justify-content-center">
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-outline-warning">Sign Up</button>
+      </form>
+    </div>
+{% endblock %}

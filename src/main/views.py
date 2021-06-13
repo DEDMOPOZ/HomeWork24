@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, View
 
-from .authors_services import authors, delete_all_authors, new_author
+from .authors_services import authors, delete_all_authors
 from .books_services import books
 from .categories_services import categories
 from .form import CommentForm, ContactUsForm, PostForm, SubscribeForm
@@ -106,9 +106,9 @@ class PostsXLSX(View):
         return response
 
 
-def authors_new(request):
-    new_author()
-    return redirect('authors_all')
+# def authors_new(request):
+#     new_author()
+#     return redirect('authors_all')
 
 
 def authors_all(request):
@@ -200,15 +200,15 @@ def api_authors_all(request):
     return JsonResponse(authors_list, safe=False)
 
 
-def api_authors_new(request):
-    new_author()
-    author = Author.objects.last()
-    data = {
-        'author_id': author.id,
-        'author_name': author.name,
-        'author_email': author.email
-    }
-    return JsonResponse(data, safe=False)
+# def api_authors_new(request):
+#     new_author()
+#     author = Author.objects.last()
+#     data = {
+#         'author_id': author.id,
+#         'author_name': author.name,
+#         'author_email': author.email
+#     }
+#     return JsonResponse(data, safe=False)
 
 
 class CreateContactUsView(CreateView):

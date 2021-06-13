@@ -13,7 +13,7 @@ urlpatterns = [
     path('posts/xlsx/', views.PostsXLSX.as_view(), name='posts_list_xlsx'),
     path('post/delete/<int:post_id>/', views.post_delete, name='post_delete'),
 
-    path('authors/new/', views.authors_new, name='authors_new'),
+    # path('authors/new/', views.authors_new, name='authors_new'),
     path('authors/all/', views.authors_all, name='authors_all'),
     path('authors/subscribe/', views.authors_sub, name='authors_sub'),
     path('authors/delete/<int:author_id>/', views.author_delete, name='author_delete'),
@@ -30,7 +30,7 @@ urlpatterns = [
     path('api/subscribe/', views.api_author_subscribe, name='api_subscribe'),
     path('api/subscribers/all/', views.api_subscribers_all, name='api_subscribers_all'),
     path('api/authors/all/', views.api_authors_all, name='api_authors_all'),
-    path('api/authors/new/', views.api_authors_new, name='api_authors_new'),
+    # path('api/authors/new/', views.api_authors_new, name='api_authors_new'),
 
     path('about/', TemplateView.as_view(template_name='main/about.html'), name='about'),
 
